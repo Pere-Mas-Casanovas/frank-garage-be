@@ -1,0 +1,18 @@
+version: "3.1"
+
+services:
+  mariadb:
+    container_name: mariadb-service
+    build: ./mariadb
+    ports:
+      - 3306:3306
+    hostname: mariadbserver
+    volumes:
+      - mariadb_data:/var/lib/mysql:rw
+    networks:
+      - local
+volumes:
+  mariadb_data:
+networks:
+  local:
+    driver: bridge
