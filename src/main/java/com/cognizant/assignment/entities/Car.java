@@ -2,8 +2,7 @@ package com.cognizant.assignment.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.UUID;
@@ -21,4 +20,9 @@ public class Car {
     private String model;
     @NotNull
     private String plateNumber;
+    private boolean licensed;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(referencedColumnName = "id")
+    private Warehouse warehouse;
 }

@@ -14,8 +14,10 @@ import java.util.UUID;
 public class CarListItemDto implements Serializable {
     private UUID id;
     private String plateNumber;
+    private String brand;
     private String model;
     private Double price;
     private Date acquisitionDate;
     private Date manufactureDate;
+    private boolean licensed;
 }
